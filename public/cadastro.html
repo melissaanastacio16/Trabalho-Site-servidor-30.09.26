@@ -56,7 +56,7 @@
             resposta.style.color = 'orange';
          
             try {
-                const respostaBe = await fetch('http://localhost:5000/cadastro', {
+                const respostaBe = await fetch('/cadastro', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ 
