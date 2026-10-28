@@ -31,9 +31,8 @@
 </div>
 
     <script>
-
         const btnLogin = document.querySelector('#btnLogin')
-        const loginMensagem=document.querySelector('#loginMensagem')
+        const loginMensagem = document.querySelector('#loginMensagem')
 
         btnLogin.addEventListener('click', async () => {
             const emailEntrada = document.querySelector('#loginemail');
@@ -48,7 +47,7 @@
                 return;
             }
 
-            loginMensagem.innerText = 'Aguarde 5 segundos, logandono servidor...';
+            loginMensagem.innerText = 'Aguarde, logando no servidor...';
             loginMensagem.style.color = 'green';
          
             try {
@@ -71,8 +70,8 @@
                 
                 localStorage.setItem('usuarioLogado', dados.usuario);
 
-                msgLogin.style.color = 'green';
-                msgLogin.innerText = 'Login realizado! entrando no site...';
+                loginMensagem.style.color = 'green';
+                loginMensagem.innerText = 'Login realizado! Entrando no site...';
  
                 setTimeout(() => {
                     window.location.href = 'chat.html';
@@ -80,15 +79,12 @@
 
             } catch (erro) {
                 console.error('Erro na requisição:', erro);
-                msgLogin.style.color = 'red';
-                msgLogin.innerText = 'Erro ao conectar com o servidor!!';
+                loginMensagem.style.color = 'red';
+                loginMensagem.innerText = 'Erro ao conectar com o servidor!!';
             }
-        }
-        );
-        
+        });
     </script>
     
     <footer>&copy; Desenvolvido por Melissa - 2026 - Curitiba</footer>
-
 </body>
 </html>
